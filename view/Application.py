@@ -1,6 +1,7 @@
 
 import tkinter as tk
 import view.ItemManagement as imw
+import view.AddOrder as ao
 
 
 
@@ -17,7 +18,9 @@ class Application:
         self.window.geometry('400x300')  # 这里的乘是小x
 
         self.reportBtn = tk.Button(self.window, text='Item Management', command=self.itemMgt)
-        self.reportBtn.place(x=120, y=240)
+        self.reportBtn.place(x=120, y=20)
+        self.reportBtn = tk.Button(self.window, text='Add Order', command=self.addOrder)
+        self.reportBtn.place(x=120, y=60)
 
         # 第10步，主窗口循环显示
         self.window.mainloop()
@@ -25,6 +28,10 @@ class Application:
     def itemMgt(self):
         itemMgtWin=imw.ItemManagement()
         itemMgtWin.show(self.window)
+
+    def addOrder(self):
+        addOrderWin=ao.AddOrder()
+        addOrderWin.show(self.window)
 
 app=Application()
 app.showWindow()
